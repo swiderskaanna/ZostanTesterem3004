@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class UltimateQATest extends PageSetup{
+public class UltimateQATest extends PageSetup {
 
 
     @Test
@@ -41,8 +41,19 @@ public class UltimateQATest extends PageSetup{
         WebElement thanksText = driver.findElement(By.xpath("//div[@class='et-pb-contact-message']/p"));
         Assertions.assertEquals("Thanks for contacting us", thanksText.getText());
 
-
+//thanksText.isDisplayed();
+//thanksText.isSelected();
+//thanksText.isEnabled();
+        // Assertions.assertTrue(thanksText.isDisplayed());
     }
 
+    @Test
+    public void testThree(){
+        //xpath: //*[contains(@class, 'et_pb_module et_pb_cta_0')]
+
+        WebElement blueField = driver.findElementByXPath("//*[contains(@class, 'et_pb_module et_pb_cta_0')]");
+        Assertions.assertEquals("rgba(46, 163, 242, 1)", blueField.getCssValue("background-color"));
+
+}
 }
 
